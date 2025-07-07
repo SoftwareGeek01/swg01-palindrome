@@ -1,5 +1,8 @@
-function reverse(string) {
-  return Array.from(string).reverse().join("");
+module.exports = Phrase;
+
+// Adds revers to all strings
+String.prototype.reverse = function() {
+  return Array.from(this).reverse().join("");
 }
 
 
@@ -22,7 +25,7 @@ function Phrase(content) {
   }
 
   this.palindrome = function palindrome() {
-    return this.processedContent() === reverse(this.processedContent());
+    return this.processedContent() === this.processedContent().reverse();
   }  
 
   this.louder = function louder() {
